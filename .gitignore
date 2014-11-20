@@ -4,3 +4,5 @@ sites/*/settings*.php
 sites/*/files
 sites/*/private
 .htaccess
+#ignore mysql docker file
+sites/default/.mysql_db_created
