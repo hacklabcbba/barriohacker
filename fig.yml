@@ -1,0 +1,20 @@
+# sudo mkdir -p /srv/barriohacker/mysql
+MYSQL: 
+  image: tutum/mysql
+  ports:
+    - "3306:3306"
+  environment:
+    MYSQL_PASS: mysql
+  volumes:
+    - /srv/barriohacker/mysql/:/var/lib/mysql
+
+drupal:
+  image: samos123/drupal
+  #image: jgenso/docker-tutum-drupal
+  ports:
+    - "80:80"
+  links:
+    - MYSQL:DB
+  volumes:
+    - .:/app
+
