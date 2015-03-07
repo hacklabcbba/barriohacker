@@ -9,12 +9,12 @@ MYSQL:
     - /srv/barriohacker/mysql/:/var/lib/mysql
 
 drupal:
-  image: samos123/drupal
-  #image: jgenso/docker-tutum-drupal
+  #image: samos123/drupal
+  image: jgenso/docker-tutum-drupal
   ports:
     - "80:80"
   links:
     - MYSQL:DB
   volumes:
-    - .:/app
+    - ./:/app
 
